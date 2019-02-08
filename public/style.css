@@ -2,7 +2,14 @@ img.small-image {
   width: 10vw;
 }
 
+h1 {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
 body {
-  background-color: #ffcc00;
   font-family: 'Merriweather', serif;
+  background-image: url('https://artisanalbrewworks.com/wp-content/uploads/2016/03/beer-background.jpg');
+  height: 100%;
 }
