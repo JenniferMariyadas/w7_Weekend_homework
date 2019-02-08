@@ -18,6 +18,8 @@ BeerListView.prototype.render = function (beers) {
     const resultView = new ResultView(this.container, beer);
     resultView.render();
   });
+
+
 };
 
 

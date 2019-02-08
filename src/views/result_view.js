@@ -1,8 +1,9 @@
 const PubSub = require ('../helpers/pub_sub.js');
 
-const ResultView = function (container, beer){
-this.container = container;
-this.beer = beer;
+const ResultView = function (container, beer, url){
+  this.container = container;
+  this.beer = beer;
+  // this.url = url;
 }
 
 
@@ -27,7 +28,7 @@ ResultView.prototype.render = function () {
 };
 
 
-ResultView.prototype.createbeerHeading = function () {
+ResultView.prototype.createBeerHeading = function () {
   const name = document.createElement('h2');
   name.classList.add('beer-name');
   if (!this.beer.name) {
@@ -38,7 +39,25 @@ ResultView.prototype.createbeerHeading = function () {
   return name;
 };
 
+ResultView.prototype.createBeerList = function () {
+  const beersList = document.createElement('ul');
+  beersList.classList.add('beers');
+  this.populateList(beersList);
+  return beersList;
+};
 
+ResultView.prototype.populateList = function (list) {
+  console.log(this.beer);
+  const beerTagLine = document.createElement('li');
+  beerTagLine.textContent = `TagLine: ${this.beer.tagline}`;
+  list.appendChild(beerTagLine);
+};
 
+  // ResultView.prototype.render = function (){
+  //   const image = document.createElement("img");
+  //   image.classList.add('small-image');
+  //   image.src = this.beer.image_url;
+  //   this.container.appendChild(image);
+// };
 
 module.exports = ResultView;
