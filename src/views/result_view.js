@@ -51,9 +51,19 @@ ResultView.prototype.populateList = function (list) {
   const beerTagLine = document.createElement('li');
   beerTagLine.textContent = `TagLine: ${this.beer.tagline}`;
   list.appendChild(beerTagLine);
+
+  const beerFoodPairing = document.createElement('li');
+  beerFoodPairing.textContent = `Food Pairing: ${this.beer.food_pairing}`;
+  list.appendChild(beerFoodPairing);
+
+  const image = document.createElement("img");
+  image.classList.add('small-image');
+  image.src = this.beer.image_url;
+  this.container.appendChild(image);
+
 };
 
-  // ResultView.prototype.render = function (){
+  // ResultView.prototype.ImageList = function (){
   //   const image = document.createElement("img");
   //   image.classList.add('small-image');
   //   image.src = this.beer.image_url;
